@@ -32,11 +32,7 @@ try:
     Himage = Image.open(filename)
     logging.info("Display image file on screen")
 
-    if waveshare_epd75_version == "2B":
-        Limage_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-        epd.display(epd.getbuffer(Himage), epd.getbuffer(Limage_Other))
-    else:
-        epd.display(epd.getbuffer(Himage))
+    epd.display(epd.getbuffer(Himage))
     epd.sleep()
 
 except IOError as e:
@@ -44,5 +40,5 @@ except IOError as e:
 
 except KeyboardInterrupt:
     logging.debug("Keyboard Interrupt - Exit")
-    epd7in5.epdconfig.module_exit()
+    epd5in83b_V2.epdconfig.module_exit()
     exit()

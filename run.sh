@@ -7,13 +7,8 @@ function log {
     echo "---------------------------------------"
 }
 
-if [ $WAVESHARE_EPD75_VERSION = 1 ]; then
-    export WAVESHARE_WIDTH=640
-    export WAVESHARE_HEIGHT=384
-else
-    export WAVESHARE_WIDTH=800
-    export WAVESHARE_HEIGHT=480
-fi
+export WAVESHARE_WIDTH=648
+export WAVESHARE_HEIGHT=480
 
 if [ $PRIVACY_MODE = 1 ]; then
     log "Get XKCD comic strip"
@@ -27,8 +22,8 @@ else
     log "Add weather info"
     .venv/bin/python3 screen-weather-get.py
 
-    log "Add Calendar info"
-    .venv/bin/python3 screen-calendar-get.py
+    #log "Add Calendar info" NOT USING CALENDAR
+    #.venv/bin/python3 screen-calendar-get.py
 
     if [ -f screen-custom-get.py ]; then
         log "Add Custom data"
