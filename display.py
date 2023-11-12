@@ -14,17 +14,10 @@ configure_logging()
 
 # Dear future me: consider converting this to a WAVESHARE_VERSION variable instead if you ever intend to support more screen sizes.
 
-waveshare_epd75_version = os.getenv("WAVESHARE_EPD75_VERSION", "2")
-
-if (waveshare_epd75_version == "1"):
-    from waveshare_epd import epd7in5 as epd7in5
-elif (waveshare_epd75_version == "2B"):
-    from waveshare_epd import epd7in5b_V2 as epd7in5
-else:
-    from waveshare_epd import epd7in5_V2 as epd7in5
+from waveshare_epd import epd5in83b_V2 # Modified Waveshare verison to use my 5.83in display.
 
 try:
-    epd = epd7in5.EPD()
+    epd = epd5in83b_V2.EPD()
     logging.debug("Initialize screen")
     epd.init()
 
