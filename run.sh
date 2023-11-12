@@ -36,7 +36,7 @@ else
 
     log "Export to PNG"
 
-    .venv/bin/cairosvg -o screen-output.png -f png --dpi 300 --output-width $WAVESHARE_WIDTH --output-height $WAVESHARE_HEIGHT screen-output-weather.svg
+    .venv/bin/cairosvg -o screen-output.png -f png --dpi 300 --output-width 648 --output-height 480 screen-output-weather.svg
 
 
     .venv/bin/python3 display.py screen-output.png
